@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Result Portal</title>
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+    <div class="title">
+          <h1>MPRS University, Chennai</h1>
+          <h3>Office of the Controller of Examinations</h3>
+          <h3>Pre- Examination Monitoring System</h3>
+          <br>
+          <hr>
+    </div>
+    <div class="content">
+        <marquee scrollamount=15>
+                <h2><center> Welcome to Office of the Controller of Examinations </center></h2>
+                <br>
+                <h3><center> Pre-Examination Monitoring System</center></h3>
+        </marquee>
+    </div>
+    
+    
+    
+    <section> 
+        <div class="form-container">
+            <h1>Student Login</h1>
+            <form name="myform" method="post" onsubmit="return validateform()" action="dashboard.html" >
+                <div class="control">
+                    <label for="regno">Register Number</label> 
+                    <input type="text" name="regno" id="regno" required>
+                </div>
+                <div class="control">
+                    <label for="dob">Date of Birth [DD-MM-YYYY]</label> 
+                    <input type="text" name="dob" id="dob" required>
+                </div>
+                <span><input type="checkbox">Remember me</span>
+                <div class="control">
+                    <input type="submit"  value="Login">
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section1>
+        <div class="form-container1">
+            <h1>Institute Login</h1>
+            <form name="myform1" method="post" onsubmit="return validateform1()" >
+                <div class="control1">
+                    <label for="inscode">Institution Code</label> 
+                    <input type="text" name="inscode" id="inscode" required>
+                </div>
+                <div class="control1">
+                    <label for="psw">Password</label> 
+                    <input type="password" name="psw" id="psw"  required>
+                </div>
+                <span><input type="checkbox">Remember me</span>
+                <div class="control1">
+                    <input type="submit"  value="Login">
+                </div>
+            </form>
+            <div class="link">
+                <a href="#">Forgot password ?</a>
+            </div>
+        </div>
+    </section1>
+    
+    <script>
+        function validateform(){
+            var regno=document.myform.regno.value;
+            var dob=document.myform.dob.value;
+            if(regno==""){
+                alert("Register number can't be blank");
+                return false;
+            }
+            else if(isNaN(regno)){
+                alert("Register number can't be characters");
+                return false;
+            } 
+            else if(regno.length<12){
+                alert("Register number can't be less than 12 digits");
+                return false;
+            }
+            else if(regno.length>12){
+                alert("Register number can't be more than 12 digits");
+                return false;
+            }
+
+            
+        }
+
+        function validateform1(){
+            var insno=document.myform1.inscode.value;
+            var psw=document.myform1.psw.value;
+            if(insno==""){
+                alert("Institution code can't be blank");
+                return false;
+            }
+            else if(isNaN(insno)){
+                alert("Institution code can't be characters");
+                return false;
+            }
+            else if(insno.length<4){
+                alert("Institution code can't be less than four");
+                return false;
+            }
+            else if(insno.length>4){
+                alert("Institution code can't be more than four ");
+                return false;
+            }
+            else if(psw==""){
+                alert("Password can't be blank ");
+                return false;
+            }
+            else if(psw.length<10){
+                alert("Password length can't be more than 10");
+                return false;
+            }
+            else if(psw.length>5){
+                alert("Password length can't be less than 10");
+                return false;
+            }
+
+
+        }
+    </script>
+    
+</body> 
+</html>
