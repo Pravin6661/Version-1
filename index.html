@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Result Portal</title>
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+    <div class="title">
+          <h1>MPRS University, Chennai</h1>
+          <h3>Office of the Controller of Examinations</h3>
+          <h3>Pre- Examination Monitoring System</h3>
+          <br>
+          <hr>
+    </div>
+    <div class="content">
+        <marquee scrollamount=15>
+                <h2><center> Welcome to Office of the Controller of Examinations </center></h2>
+                <br>
+                <h3><center> Pre-Examination Monitoring System</center></h3>
+        </marquee>
+    </div>
+    
+    
+    
+    <section> 
+        <div class="form-container">
+            <h1>Student Login</h1>
+            <form name="myform" method="post" onsubmit="return validateform()" action="dashboard.html" >
+                <div class="control">
+                    <label for="regno">Register Number</label> 
+                    <input type="text" name="regno" id="regno" required>
+                </div>
+                <div class="control">
+                    <label for="dob">Date of Birth [DD-MM-YYYY]</label> 
+                    <input type="text" name="dob" id="dob" required>
+                </div>
+                <span><input type="checkbox">Remember me</span>
+                <div class="control">
+                    <input type="submit"  value="Login">
+                </div>
+            </form>
+        </div>
+    </section>
+
+   
+    
+    <script>
+        function validateform(){
+            var regno=document.myform.regno.value;
+            var dob=document.myform.dob.value;
+            if(regno==""){
+                alert("Register number can't be blank");
+                return false;
+            }
+            else if(isNaN(regno)){
+                alert("Register number can't be characters");
+                return false;
+            } 
+            else if(regno.length<12){
+                alert("Register number can't be less than 12 digits");
+                return false;
+            }
+            else if(regno.length>12){
+                alert("Register number can't be more than 12 digits");
+                return false;
+            }
+
+            
+        }
+    </script>
+    
+</body> 
+</html>
